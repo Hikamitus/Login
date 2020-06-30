@@ -24,8 +24,8 @@ class Conta(object):
 
  def login(self):
   printl('Sessão de Login.')
-  login = md5(input('Login: '))
-  senha = md5(getpass('Senha: '))
+  login = md5(str(input('Login: ')))
+  senha = md5(str(getpass('Senha: ')))
   c.execute("SELECT * FROM logins WHERE login = ? and senha = ?", (login, senha))
   try:
    row = c.fetchone()
@@ -49,8 +49,6 @@ Ouve um Erro ao Logar!
   self.__senha = None
   self.__username = None
   self.__bio = None
-  while True:
-    self__update()
 
 
  def register():
@@ -210,6 +208,6 @@ from getpass import getpass
 from os import system
 from time import sleep
 
-aqui = "./A_Login/"
-conn = sql3.connect(aqui+'database.db')
+#aqui = "./A_Login/"
+conn = sql3.connect('database.db')
 c = conn.cursor()

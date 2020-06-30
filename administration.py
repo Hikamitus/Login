@@ -1,8 +1,8 @@
 import sqlite3 as sql
 
-aqui = "./A_Login/"
+#aqui = "./A_Login/"
 	
-connection = sql.connect(aqui+'database.db')
+connection = sql.connect('database.db')
 c = connection.cursor()
 
 c.execute("""CREATE TABLE IF NOT EXISTS logins(
